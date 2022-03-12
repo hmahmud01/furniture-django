@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<section class="landing m-5">
+    <div class="container">
+        <div class="text-center">
+            <h1 class="text-center">Suggested Furniture Stores in {{ filter_key }}</h1>
+            <img src="/static/home/logo.png" alt="" style="width: 50%;">
+        </div>
+        
+
+        <div class="m-5">
+            <div class="row">
+                {% for shop in shops %}
+                <div class="col-sm-12 mb-2">
+                    <div class="card">
+                        <div class="card-body">
+                            
+                            <div class="row">
+                                <div class="col-sm-9">
+                                    <div class="row">
+                                        <div class="col-sm-4">
+                                            <h6 class="card-subtitle mb-2 text-muted">Phone Number: {{ shop.phone }}</h6>
+                                            <p class="card-text">{{ shop.addr }}</p>
+                                            <a href="{% url 'furnitures' shop.id %}" class="btn btn-primary">See Store Furnitures</a>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <h6 class="card-subtitle mb-2 text-muted">Contact Persons: </h6>
+                                            <ul>
+                                                <li>Person 1</li>
+                                                <li>Person 2</li>
+                                            </ul>
+                                            <p class="card-text"> <strong>Store Hours</strong> : {{ shop.addr }}</p>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <h6 class="card-subtitle mb-2 text-muted">Email: {{ shop.phone }}</h6>
+                                            <p class="card-text"><strong>Delivary</strong> : {{ shop.addr }}</p>
+                                            <p class="card-text"><strong>Furniture Setup Service</strong> : {{ shop.addr }}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3 text-end">
+                                    <h1 class="card-title">{{ shop.name }}</h1>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/viewerjs/1.10.4/viewer.min.css" integrity="sha512-OgbWuZ8OyVQxlWHea0T9Bdy1oDhs380WxLMaLZbuitQ/mdntHBPnApxbTebB9N5KoHZd3VMkk3G2cTY563nu5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+{% endblock %}
+
+{% block content %}
+<section class="landing m-5">
+    <div class="container">
+        <h1 class="text-center">Furniture Detail</h1>
+
+        <div class="m-5">
+            <div class="row">
+
+                <div class="col-md-7 mb-1">
+                    <div class="card rounded-0" id="image">
+                        <img src="/media/{{ item.image }}" class="card-img-top" alt="...">
+                    </div>
+                </div>
+
+                <div class="col-md-5 mb-1">
+                    <div class="card rounded-0">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ item.title }}</h5>
+                            <p class="card-text">{{ item.subtitle }}</p>
+                            <p class="card-text">{{ item.description }}</p>
+                            <hr>
+                            <h5 class="card-title">Store Info</h5>
+                            <p class="card-text">Store Name:  {{ item.shop.name }}</p>
+                            <p class="card-text">Store Contact:  {{ item.shop.phone }}</p>
+                            <p class="card-text">Store Address:  {{ item.shop.addr }}</p>
+                        </div>
+                        {% comment %} <div class="card-body">
+                            <a href="#" class="card-link">Another link</a>
+                        </div> {% endcomment %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/viewerjs/1.10.4/viewer.min.js" integrity="sha512-2HLzgJH7ZNywnEDB1HqijieFxszStt3QXS8Qk9m/VMUV/asMWlz9PmibHsvWIz9rtKOOr28z8zu1iJ3pf/TTHQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+window.onload = function() { window.print(); }
+</script>
+{% endblock %}

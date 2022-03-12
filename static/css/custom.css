@@ -1,0 +1,42 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.furniture-bg{
+    height: 100vh;
+    /* background-color: red; */
+}
+
+.enter-btn {
+    height: 250px;
+    width: 250px;
+}
+
+.btn-ctnt{
+    text-align: center;
+    display: inline-grid;
+    vertical-align: middle;
+}
+
+.home-img{
+    height: 200px;
+    width: 200px;
+    vertical-align: baseline;
+}
+
+.card-img-top{
+    /* height: 200px; */
+}
+
+.area-position{
+    position: absolute;
+    margin: auto;
+    width: 600px;
+    left: 0;
+    right: 0;
+}
+
+.image img{
+    cursor: zoom-in;
+}

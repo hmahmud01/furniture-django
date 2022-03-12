@@ -1,0 +1,106 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<section id="landing m-5">
+    <div class="m-5">
+        <div class="container text-center">
+            <h1 class="text-center border border-2">Furniture Stores in Greater Toronto Area</h1>
+        </div>
+    </div>
+
+    <div class="row">
+        <p class="text-center fs-3">Click On the Area to Navigate</p>
+        <div class="p-5">
+            <div id="area"></div>
+            <div class="area-position">
+                <div id="container2" style="position:absolute; left:0px; top:0px;"></div>
+                <div id="addText" style="position:absolute; left:0px; top:0px;"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row text-center" style="position: absolute; bottom: 0; left: 0; right: 0; margin-left: auto; margin-right: auto;">
+            <img class="text-center" src="/static/home/logo.png" alt="" style="width: 30%;">
+    </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script>
+        $(function() {
+            var chart = new Highcharts.chart('container2', {
+                chart: {
+                    renderTo: 'container2',
+                    type: 'pie',
+                    backgroundColor: 'rgba(0,0,0,0)',
+                    height: '600px',
+                },
+                credits: {
+                    enabled: false
+                },
+                title: {
+                    text: '',
+                },
+                xAxis: {
+                    type: 'category'
+                },
+                plotOptions: {
+                    series: {
+                        innerSize: '50%',
+                        cursor: 'pointer',
+                        point: {
+                            events: {
+                                click: function () {
+                                    // location.href = 'https://en.wikipedia.org/wiki/' +
+                                    //     this.options.key;
+                                    location.href = this.options.url;
+                                }
+                            }
+                        }
+                    }
+                },
+
+                series: [{
+
+                    data: [{
+                        y: 50,
+                        name: 'East',
+                        key: 'east',
+                        url: "{% url 'shoplist' 1 %}"
+                    }, {
+                        y: 50,
+                        name: 'West',
+                        key: 'west',
+                        url: "{% url 'shoplist' 2 %}"
+                    }, {
+                        y: 50,
+                        name: 'North',
+                        key: 'north',
+                        url: "{% url 'shoplist' 3 %}"
+                    }, {
+                        y: 50,
+                        name: 'South',
+                        key: 'south',
+                        url: "{% url 'shoplist' 4 %}"
+                    }]
+                }]
+            }, function(chart) { // on complete
+                var textX = chart.plotLeft + (chart.plotWidth  * 0.5);
+                var textY = chart.plotTop  + (chart.plotHeight * 0.5);
+
+                var span = '<span id="pieChartInfoText" style="position:absolute; text-align:center;">';
+                span += '<span style="font-size: 32px"><a href="/">Central</a></span><br>';
+                span += '<span style="font-size: 16px">Zone</span>';
+                span += '</span>';
+
+                $("#addText").append(span);
+                span = $('#pieChartInfoText');
+                span.css('left', textX + (span.width() * -0.5));
+                span.css('top', textY + (span.height() * -0.5));
+            });
+        });
+    </script>
+{% endblock %}

@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<section id="landing m-5">
+        <div class="m-5">
+            <div class="container text-center">
+                <img src="/static/home/logo.png" alt="" style="width: 50%;">
+                <p class="mt-2 fs-4">Furniture Flyers, Promotions, Discount Coupons & Clearances</p>
+
+                <div class="m-5">
+                    <!-- <button type="button" class="btn btn-info rounded-circle enter-btn"><h1>ENTER</h1></button> -->
+                    <a type="button" class="btn btn-danger rounded-circle enter-btn btn-ctnt" href="{% url 'area' %}"><h1 class="align-middle my-auto">Enter</h1></a>
+                </div>  
+            </div>
+        </div>
+
+        <div class="row m-5">
+            <div class="m-5 p-5">
+                <img src="/static/home/IMG-1703.PNG" class="img-thumbnail home-img" alt="">
+                <img src="/static/home/IMG-1705.PNG" class="img-thumbnail home-img" alt="">
+                <img src="/static/home/IMG-1707.PNG" class="img-thumbnail home-img" alt="">
+                <img src="/static/home/IMG-1708.PNG" class="img-thumbnail home-img" alt="">
+                <img src="/static/home/IMG-1709.PNG" class="img-thumbnail home-img" alt="">
+                <img src="/static/home/IMG-1713.PNG" class="img-thumbnail home-img" alt="">
+                <img src="/static/home/IMG-1715.PNG" class="img-thumbnail home-img" alt="">
+                <img src="/static/home/IMG-1720.PNG" class="img-thumbnail home-img" alt="">
+                <img src="/static/home/IMG-1727.PNG" class="img-thumbnail home-img" alt="">
+                <img src="/static/home/IMG-1731.PNG" class="img-thumbnail home-img" alt="">
+                <img src="/static/home/IMG-1739.PNG" class="img-thumbnail home-img" alt="">
+                <img src="/static/home/IMG-1756.PNG" class="img-thumbnail home-img" alt="">
+                <img src="/static/home/IMG-1766.PNG" class="img-thumbnail home-img" alt="">
+                <img src="/static/home/IMG-1761.PNG" class="img-thumbnail home-img" alt="">
+                <!-- <img src="https://img.freepik.com/free-vector/flat-exotic-bird-collection_23-2147735891.jpg?t=st=1645132514~exp=1645133114~hmac=ac0032dcaff7a31133e8bfa43113aabe49d106a04b64764cdebd01214f3ae709&w=826" class="img-thumbnail home-img">
+                <img src="https://img.freepik.com/free-photo/time-is-money-concept-alarm-clock-lots-euro-coins_1401-456.jpg?t=st=1645132732~exp=1645133332~hmac=ddc405ec7ecfaa450272c75b4d4038afeda6c0f0efbba10067aa3b5c11ab4c52&w=1380" class="img-thumbnail home-img">
+                <img src="https://img.freepik.com/free-photo/old-wooden-door-with-bougainvillea_1401-306.jpg?t=st=1645132727~exp=1645133327~hmac=bc01b694257f7d6353510c5f04232cf003f2134107779972f59c89657df26baf&w=1380" class="img-thumbnail home-img">
+                <img src="https://img.freepik.com/free-photo/milford-sound-new-zealand-travel-destination-concept_53876-42945.jpg?t=st=1645132725~exp=1645133325~hmac=8474e0a7f0418ddadbd98b852158c9d5db51ed9ce2f886305763a21cda93a216&w=1380" class="img-thumbnail home-img">
+                <img src="https://img.freepik.com/free-photo/wooden-mannequin-presenting-invisible-object_1401-337.jpg?t=st=1645132740~exp=1645133340~hmac=858bf6003709719080f2a8f69410a4a9e23780aacebce2bd74379570db0dce0d&w=1380" class="img-thumbnail home-img">
+                
+                <img src="https://img.freepik.com/free-vector/flat-exotic-bird-collection_23-2147735891.jpg?t=st=1645132514~exp=1645133114~hmac=ac0032dcaff7a31133e8bfa43113aabe49d106a04b64764cdebd01214f3ae709&w=826" class="img-thumbnail home-img">
+                <img src="https://img.freepik.com/free-photo/time-is-money-concept-alarm-clock-lots-euro-coins_1401-456.jpg?t=st=1645132732~exp=1645133332~hmac=ddc405ec7ecfaa450272c75b4d4038afeda6c0f0efbba10067aa3b5c11ab4c52&w=1380" class="img-thumbnail home-img">
+                <img src="https://img.freepik.com/free-photo/old-wooden-door-with-bougainvillea_1401-306.jpg?t=st=1645132727~exp=1645133327~hmac=bc01b694257f7d6353510c5f04232cf003f2134107779972f59c89657df26baf&w=1380" class="img-thumbnail home-img">
+                <img src="https://img.freepik.com/free-photo/milford-sound-new-zealand-travel-destination-concept_53876-42945.jpg?t=st=1645132725~exp=1645133325~hmac=8474e0a7f0418ddadbd98b852158c9d5db51ed9ce2f886305763a21cda93a216&w=1380" class="img-thumbnail home-img">
+                <img src="https://img.freepik.com/free-photo/wooden-mannequin-presenting-invisible-object_1401-337.jpg?t=st=1645132740~exp=1645133340~hmac=858bf6003709719080f2a8f69410a4a9e23780aacebce2bd74379570db0dce0d&w=1380" class="img-thumbnail home-img">
+
+                <img src="https://img.freepik.com/free-vector/flat-exotic-bird-collection_23-2147735891.jpg?t=st=1645132514~exp=1645133114~hmac=ac0032dcaff7a31133e8bfa43113aabe49d106a04b64764cdebd01214f3ae709&w=826" class="img-thumbnail home-img">
+                <img src="https://img.freepik.com/free-photo/time-is-money-concept-alarm-clock-lots-euro-coins_1401-456.jpg?t=st=1645132732~exp=1645133332~hmac=ddc405ec7ecfaa450272c75b4d4038afeda6c0f0efbba10067aa3b5c11ab4c52&w=1380" class="img-thumbnail home-img">
+                <img src="https://img.freepik.com/free-photo/old-wooden-door-with-bougainvillea_1401-306.jpg?t=st=1645132727~exp=1645133327~hmac=bc01b694257f7d6353510c5f04232cf003f2134107779972f59c89657df26baf&w=1380" class="img-thumbnail home-img">
+                <img src="https://img.freepik.com/free-photo/milford-sound-new-zealand-travel-destination-concept_53876-42945.jpg?t=st=1645132725~exp=1645133325~hmac=8474e0a7f0418ddadbd98b852158c9d5db51ed9ce2f886305763a21cda93a216&w=1380" class="img-thumbnail home-img"> -->
+            </div>
+        </div>
+    </section>
+{% endblock %}

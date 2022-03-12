@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<section class="landing m-5">
+    <div class="container">
+        <h1 class="text-center">{{ shop.name }} Furnitures</h1>
+
+        <div class="m-5">
+            <div class="row">
+                {% for item in items %}
+                {% if item.status %}
+                <div class="col-md-4 mb-1">
+                    <div class="card rounded-0">
+                        <img src="/media/{{ item.image }}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ item.title }}</h5>
+                            <p class="card-text d-inline-block text-truncate col-6">{{ item.description }}</p>
+                        </div>
+                        <div class="card-body">
+                            <a href="{% url 'detail' item.id %}" class="card-link">See Detail</a>
+                            <a href="#" class="card-link">Another link</a>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
