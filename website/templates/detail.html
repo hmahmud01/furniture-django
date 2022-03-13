@@ -23,18 +23,20 @@
                 <div class="col-md-5 mb-1">
                     <div class="card rounded-0">
                         <div class="card-body">
-                            <h5 class="card-title">Refernce: {{ item.title }}</h5>
-                            <p class="card-text">Offers : {{ item.subtitle }}</p>
+                            <h5 class="card-title">Refernce: {{ item.reference }}</h5>
+                            <p class="card-text">Offers : {{ item.offer }}</p>
                             <p class="card-text">{{ item.description }}</p>
                             <hr>
                             <h5 class="card-title">Store Info</h5>
                             <p class="card-text">Store Name:  {{ item.shop.name }}</p>
                             <p class="card-text">Phone:  {{ item.shop.phone }}</p>
-                            <p class="card-text">Email:  </p>
+                            <p class="card-text">Email:  {{ item.shop.email }}</p>
                             <p class="card-text">Contact Persons:  </p>
                             <ul>
-                                <li>Person 1</li>
-                                <li>Person 2</li>
+                                {% for person in persons %}
+                                <li>{{ person.name }}</li>
+                                {% endfor %}
+
                             </ul>
                             <p class="card-text">Store Address:  {{ item.shop.addr }}</p>
                         </div>

@@ -21,6 +21,8 @@ def shoplist(request, aid):
         filter_key = "NORTH"
     elif aid == 4:
         filter_key = "SOUTH"
+    elif aid == 5:
+        filter_key = "CENTRAL"
     else:
         filter_key = None
 
@@ -38,7 +40,9 @@ def furnitures(request, sid):
 def detail(request, fid):
     data = ""
     item = Furniture.objects.get(id=fid)
-    return render(request, "detail.html", {"data": data, "item":item})
+    sid = item.shop.id
+    persons = ContactPerson.objects.filter(shop_id=sid)
+    return render(request, "detail.html", {"data": data, "item":item, "persons": persons})
 
 def printDoc(request, fid):
     data = ""
