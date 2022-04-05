@@ -2,21 +2,27 @@
 {% load static %}
 
 {% block content %}
-<section id="landing m-5">
-    <div class="m-5">
+<section id="landing mt-5">
+    <div class="mt-5">
         <div class="container text-center">
+            <img class="mb-5" src="/static/home/logo.png" alt="" style="width: 50%;">
             <h1 class="text-center border border-2">Furniture Stores in Greater Toronto Area</h1>
         </div>
     </div>
 
-    <div class="row">
+    <div class="">
         <p class="text-center fs-3">Click On the Area to Navigate</p>
         <div class="p-5">
             <div id="area"></div>
             <div class="area-position">
-                <div id="container2" style="position:absolute; left:0px; top:0px;"></div>
-                <div id="addText" style="position:absolute; left:0px; top:0px;"></div>
+                <div id="container2"></div>
+                <div id="addText"></div>
+                <!-- <div id="container2" style="position:absolute; left:0px; top:0px;"></div> -->
+                <!-- <div id="addText" style="position:absolute; left:0px; top:0px;"></div> -->                
             </div>
+        </div>
+        <div class="mt-5 cz-control">
+            <a href="#">Central</a>
         </div>
     </div>
 
@@ -101,6 +107,36 @@
                 span.css('left', textX + (span.width() * -0.5));
                 span.css('top', textY + (span.height() * -0.5));
             });
+            responsive: {
+                rules: [{
+                    condition: {
+                        maxWidth: 500
+                    },
+                    chartOptions: {
+                        legend: {
+                            align: 'center',
+                            verticalAlign: 'bottom',
+                            layout: 'horizontal'
+                        },
+                        yAxis: {
+                            labels: {
+                                align: 'left',
+                                x: 0,
+                                y: -5
+                            },
+                            title: {
+                                text: null
+                            }
+                        },
+                        subtitle: {
+                            text: null
+                        },
+                        credits: {
+                            enabled: false
+                        }
+                    }
+                }]
+            }
         });
     </script>
 {% endblock %}

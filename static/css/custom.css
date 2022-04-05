@@ -40,3 +40,32 @@
 .image img{
     cursor: zoom-in;
 }
+
+.cz-control{
+    display: none;
+}
+
+
+@media only screen and (max-width: 600px) {
+    .area-position{
+        position: absolute;
+        margin: auto;
+        width: 300px;
+        left: 0;
+        right: 0;
+        top: 0;
+        margin-top: 128px;
+    }
+
+    #addText{
+        display: none;
+    }
+
+    .cz-control{
+        position: relative;
+        display: block;
+        left: 44%;
+        /* right: 0;
+        bottom: 0; */
+    }
+  }
