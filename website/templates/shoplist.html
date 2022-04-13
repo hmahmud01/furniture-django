@@ -21,27 +21,28 @@
                                 <div class="col-sm-9">
                                     <div class="row">
                                         <div class="col-sm-4">
-                                            <h6 class="card-subtitle mb-2 text-muted">Phone Number: {{ shop.phone }}</h6>
-                                            <p class="card-text">{{ shop.addr }}</p>
-                                            <a href="{% url 'furnitures' shop.id %}" class="btn btn-primary">See Store Furnitures</a>
+                                            <h6 class="card-subtitle mb-2 text-muted">Phone Number: {{ shop.shop.phone }}</h6>
+                                            <p class="card-text">{{ shop.shop.addr }}</p>
+                                            <a href="{% url 'furnitures' shop.shop.id %}" class="btn btn-primary">See Store Furnitures</a>
                                         </div>
                                         <div class="col-sm-4">
                                             <h6 class="card-subtitle mb-2 text-muted">Contact Persons: </h6>
                                             <ul>
-                                                <li>Person 1</li>
-                                                <li>Person 2</li>
+                                                {% for person in shop.persons %}
+                                                <li>{{ person.name }}</li>
+                                                {% endfor %}
                                             </ul>
-                                            <p class="card-text"> <strong>Store Hours</strong> : {{ shop.hours }}</p>
+                                            <p class="card-text"> <strong>Store Hours</strong> : {{ shop.shop.hours }}</p>
                                         </div>
                                         <div class="col-sm-4">
-                                            <h6 class="card-subtitle mb-2 text-muted">Email: {{ shop.email }}</h6>
-                                            <p class="card-text"><strong>Delivary</strong> : {{ shop.delivary }}</p>
-                                            <p class="card-text"><strong>Furniture Setup Service</strong> : {{ shop.service }}</p>
+                                            <h6 class="card-subtitle mb-2 text-muted">Email: {{ shop.shop.email }}</h6>
+                                            <p class="card-text"><strong>Delivary</strong> : {{ shop.shop.delivary }}</p>
+                                            <p class="card-text"><strong>Furniture Setup Service</strong> : {{ shop.shop.service }}</p>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-sm-3 text-end">
-                                    <h1 class="card-title">{{ shop.name }}</h1>
+                                    <h1 class="card-title">{{ shop.shop.name }}</h1>
                                 </div>
                             </div>
                             

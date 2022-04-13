@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <br>
+
+        <h2>Dear {{ email }}</h2>
+        <h4>Thanks for Using FurnitureFM for your services. Your Detail Product List is Given Below</h4>
+
+
+        <h3>Products Details:</h3>
+        {% for product in obj %}        
+        <p>Furniture: {{ product.title }} </p>
+        <p>Shop Name: {{ product.shop.name }} </p>
+        <p>Shop phone: {{ product.shop.phone }} </p>
+        <img src="https://furniturefm.com/media/{{ product.image }}" alt="{{ product.title }}" style="height: 200px; width: 200px;">
+        {% endfor %}
+
+        <h3>Your Message: </h3>
+        {{ message }}
+        <br>
+        Thanks Again! Have A good a Good Day.
+        - FurnitureFM Team
+    </body>
+</html>
