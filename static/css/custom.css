@@ -45,6 +45,10 @@
     display: none;
 }
 
+.highcharts-label text{
+    font-size: 21px !important;
+}
+
 
 @media only screen and (max-width: 600px) {
     .area-position{
@@ -58,13 +62,18 @@
     }
 
     #addText{
+        display: block;
+    }
+
+    #pieChartInfoText {
         display: none;
     }
 
     .cz-control{
         position: relative;
         display: block;
-        left: 44%;
+        left: 45%;
+        top: 5%;
         /* right: 0;
         bottom: 0; */
     }

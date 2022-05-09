@@ -15,14 +15,14 @@
         <div class="p-5">
             <div id="area"></div>
             <div class="area-position">
-                <div id="container2"></div>
+                <div id="container2" style="width: 100%;"></div>
                 <div id="addText"></div>
                 <!-- <div id="container2" style="position:absolute; left:0px; top:0px;"></div> -->
                 <!-- <div id="addText" style="position:absolute; left:0px; top:0px;"></div> -->                
             </div>
         </div>
         <div class="mt-5 cz-control">
-            <a href="#">Central</a>
+            <a href="/shoplist/5/">Central</a>
         </div>
     </div>
 
@@ -73,22 +73,22 @@
 
                     data: [{
                         y: 50,
-                        name: 'East',
+                        name: 'East Zone',
                         key: 'east',
                         url: "{% url 'shoplist' 1 %}"
                     }, {
                         y: 50,
-                        name: 'West',
+                        name: 'West Zone',
                         key: 'west',
                         url: "{% url 'shoplist' 2 %}"
                     }, {
                         y: 50,
-                        name: 'North',
+                        name: 'North Zone',
                         key: 'north',
                         url: "{% url 'shoplist' 3 %}"
                     }, {
                         y: 50,
-                        name: 'South',
+                        name: 'South Zone',
                         key: 'south',
                         url: "{% url 'shoplist' 4 %}"
                     }]
@@ -110,7 +110,7 @@
             responsive: {
                 rules: [{
                     condition: {
-                        maxWidth: 500
+                        maxWidth: 600
                     },
                     chartOptions: {
                         legend: {
