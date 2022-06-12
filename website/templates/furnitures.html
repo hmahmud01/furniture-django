@@ -4,6 +4,16 @@
 {% block content %}
 <section class="landing m-5">
     <div class="container">
+        <div class="">
+            <div class="row mb-3">
+                <div class="col-6 text-start">
+                    <a href="/"><img src="/static/home/logo.png" alt="" style="width: 25%;"></a>
+                </div>
+                <div class="col-6 text-end">
+                    <a href="/" class="btn btn-sm btn-secondary">Back to Home</a>
+                </div>
+            </div>
+        </div>
         <div class="row">
             <div class="col-6">
                 <h1 class="text-start">{{ shop.name }} Furnitures</h1>
@@ -71,12 +81,11 @@
                     <form action="{% url 'order' %}" method="POST">{% csrf_token %}
                         <div class="modal-body">
                             <table class="show-cart table">
-
                             </table>
                             <div>Total price: $<span class="total-cart"></span></div>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-secondary close" data-dismiss="modal">Close</button>
                             <button type="submit" class="btn btn-primary">Order now</button>
                         </div>
                     </form>
@@ -97,7 +106,7 @@
                         </div>
                         <div class="card-body">
                             <a href="{% url 'detail' item.id %}" class="card-link">See Detail</a>
-                            <a href="#" data-name="{{ item.title }}" data-price="0.5" data-id="{{ item.id }}"
+                            <a href="#" data-name="{{ item.title }}" data-img="/media/{{ item.image }}" data-price="0.5" data-id="{{ item.id }}"
                                 class="add-to-cart card-link">Add To Cart</a>
                         </div>
                     </div>

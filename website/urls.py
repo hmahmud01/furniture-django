@@ -12,6 +12,8 @@ urlpatterns = [
     path('shoplist/<int:aid>/', views.shoplist, name="shoplist"),
     path('furnitures/<int:sid>/', views.furnitures, name="furnitures"),
     path('order/', views.orderFunitures, name="order"),
+    path('listoforders/', views.listOfOrders, name="listoforders"),
+    path('orderdetail/<int:oid>', views.orderDetails, name="orderdetail"),
     path('detail/<int:fid>/', views.detail, name="detail"),    
     path('print/<int:fid>/', views.printDoc, name="print"),    
 ]

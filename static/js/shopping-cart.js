@@ -9,8 +9,9 @@ var shoppingCart = (function() {
     cart = [];
     
     // Constructor
-    function Item(name, price, count, id) {
+    function Item(name, img, price, count, id) {
       this.name = name;
+      this.img = img;
       this.price = price;
       this.count = count;
       this.id = id
@@ -36,7 +37,7 @@ var shoppingCart = (function() {
     var obj = {};
     
     // Add to cart
-    obj.addItemToCart = function(name, price, count, id) {
+    obj.addItemToCart = function(name, img, price, count, id) {
       for(var item in cart) {
         if(cart[item].name === name) {
           cart[item].count ++;
@@ -44,7 +45,7 @@ var shoppingCart = (function() {
           return;
         }
       }
-      var item = new Item(name, price, count, id);
+      var item = new Item(name, img, price, count, id);
       cart.push(item);
       saveCart();
     }
@@ -144,9 +145,10 @@ var shoppingCart = (function() {
   $('.add-to-cart').click(function(event) {
     event.preventDefault();
     var name = $(this).data('name');
+    var img = $(this).data('img');
     var price = Number($(this).data('price'));
     var id = Number($(this).data('id'));
-    shoppingCart.addItemToCart(name, price, 1, id);
+    shoppingCart.addItemToCart(name, img, price, 1, id);
     displayCart();
   });
   
@@ -155,7 +157,8 @@ var shoppingCart = (function() {
     shoppingCart.clearCart();
     displayCart();
   });
-  
+
+  // <img src="/media/{{ item.image }}" class="card-img-top" alt="..."></img>
   
   function displayCart() {
     var cartArray = shoppingCart.listCart();
@@ -163,6 +166,7 @@ var shoppingCart = (function() {
     for(var i in cartArray) {
       output += "<tr>"
         + "<td>" + cartArray[i].name + "</td>"         
+        + "<td> <img class='img-thumbnail' src='" + cartArray[i].img + "'></img></td>"        
         + "<td><input type='number' class='item-count form-control' name='furnitures' data-name='" + cartArray[i].name + "' value='" + cartArray[i].id + "' hidden></td>"
         + "<td><button class='delete-item btn btn-danger' data-name=" + cartArray[i].name + ">X</button></td>"        
         +  "</tr>";

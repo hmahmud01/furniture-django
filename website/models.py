@@ -56,3 +56,20 @@ class Furniture(models.Model):
     def __str__(self):
         return self.title
     
+
+class Order(models.Model):
+    email = models.CharField(max_length=150, null=True, blank=True)
+    msg = models.TextField()
+    status = models.BooleanField(default=False)
+    created_at = models.DateField(auto_now_add=True, null=True, blank=True)
+
+    def __str__(self):
+        return str(self.id)
+
+
+class OrderedFurniture(models.Model):
+    furniture = models.ForeignKey(Furniture, on_delete=models.CASCADE)
+    order = models.ForeignKey(Order, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return str(self.id)

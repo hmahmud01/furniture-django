@@ -56,13 +56,23 @@ def orderFunitures(request):
     email_addr = post_data['email']
     message_data = post_data['message']
     obj = []
+
+    order = Order(
+        email=email_addr,
+        msg=message_data,
+    )
+    order.save()
     for data in furnitures:
         id = int(data)
         furniture = Furniture.objects.get(id=id)
         obj.append(furniture)
-    
-    print("printing furniture OBJECTS")
-    print(obj)
+        orderfurniture = OrderedFurniture(
+            furniture=furniture,
+            order=order
+        )
+
+        orderfurniture.save()
+
 
     subject, from_email, to = 'Your Selected Furniture From Furniture FM', 'furniturefmcanada@gmail.com', f'{email_addr}'
     text_content = 'This is an important message.'
@@ -71,8 +81,19 @@ def orderFunitures(request):
     })
     msg = EmailMultiAlternatives(subject, text_content, from_email, [to])
     msg.attach_alternative(html_content, "text/html")
-    msg.send()
+    # msg.send()
     return redirect('/')
+
+def listOfOrders(request):
+    orders = Order.objects.all()
+
+    return render(request, "listoforders.html", {"orders": orders})
+
+def orderDetails(request, oid):
+    order = Order.objects.get(id=oid)
+    furnitures = OrderedFurniture.objects.filter(order__id=oid)
+
+    return render(request, "orderdetails.html", {"order": order, "furnitures": furnitures})
 
 def detail(request, fid):
     data = ""
