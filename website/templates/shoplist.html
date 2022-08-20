@@ -29,8 +29,9 @@
                             <div class="row">
                                 <div class="col-md-8 col-sm-4">
                                     <div class="row">
-                                        <div class="col-sm-6">
-                                            <h6 class="card-text mb-2">Phone Number: <strong> {{ shop.shop.phone }} </strong> </h6>
+                                        <div class="col-sm-5">
+                                            <h6 class="card-text mb-2">Phone Number: <br> 
+                                            <strong> {{ shop.shop.phone }} </strong> </h6>
                                             {% comment %} <p class="card-text">{{ shop.shop.addr }}</p>   {% endcomment %}
                                             <h6 class="card-text mb-2">Contact Persons: </h6>
                                             <ul>
@@ -47,16 +48,16 @@
                                                 {% endfor %}
                                             </ul>
                                         </div> {% endcomment %}
-                                        <div class="col-sm-6 d-none d-sm-none d-md-block">
+                                        <div class="col-sm-7 d-none d-sm-none d-md-block">
                                             <h6 class="card-text"> <strong> Email</strong>: {{ shop.shop.email }}</h6>
-                                            <p class="card-text"><strong>Delivery</strong> : {{ shop.shop.delivary }}</p>
-                                            <p class="card-text"><strong>Furniture Setup Service</strong> : {{ shop.shop.service }}</p>                                            
+                                            <h6 class="card-text"><strong>Delivery</strong> : {{ shop.shop.delivary }}</h6>
+                                            <h6 class="card-text"><strong>Furniture Setup Service</strong> : {{ shop.shop.service }}</h6>                                            
+                                            <h6 class="card-text"><strong>Address</strong> : {{ shop.shop.addr }}</h6>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-md-4 text-center">
                                     <h2 class="card-title">{{ shop.shop.name }}</h2>
-                                    <p class="card-text">{{ shop.shop.addr }}</p>  
                                     <a href="{% url 'furnitures' shop.shop.id %}" class="btn btn-sm btn-primary">See Store Furnitures</a>
                                 </div>
                             </div>
