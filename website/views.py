@@ -9,7 +9,8 @@ def home(request):
 
 def area(request):
     data = ""
-    return render(request, "area.html", {"data": data})
+    areas = AreaName.objects.all()
+    return render(request, "area.html", {"data": data, "areas": areas})
 
 def shoplist(request, aid):
     data = aid
