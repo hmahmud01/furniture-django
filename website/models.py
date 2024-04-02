@@ -16,7 +16,7 @@ class AreaName(models.Model):
         (CENTRAL, 'Central'),
     ]
 
-    area = models.CharField(max_length=50, choices=AREA_CHOICES, default=EAST)
+    area = models.CharField(max_length=150, null=True, blank=True)
     created_at = models.DateField(auto_now_add=True, null=True, blank=True)
 
     def __str__(self):
