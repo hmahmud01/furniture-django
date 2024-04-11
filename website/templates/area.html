@@ -5,8 +5,8 @@
 <section id="landing mt-5">
     <div class="mt-5">
         <div class="container text-center">
-            <a href="/"><img class="mb-5" src="/static/home/logo.png" alt="" style="width: 50%;"></a>
-            <h1 class="text-center border border-2">Furniture Stores in Greater Toronto Area</h1>
+            <img src="/static/home/logo.png" alt="" style="width: 50%;">
+            <p class="mt-2 fs-4">Furniture Flyers, Promotions, Discount Coupons & Clearances</p>
         </div>
     </div>
 
@@ -25,7 +25,7 @@
     </div> -->
 
     <div class="text-center">
-        <h1 class="text-center fs-3">Click on the Area to Navigate</h1>
+        <!-- <h1 class="text-center fs-3">Click on the Area to Navigate</h1>/ -->
         {% for area in areas %}
         <a href="{% url 'shoplist' area.id %}" class="text-decoration-none text-reset m-5"><h3>{{ area.area }}</h3></a>
         {% endfor %}

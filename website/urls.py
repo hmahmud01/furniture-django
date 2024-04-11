@@ -7,7 +7,7 @@ from django.urls import path
 from website import views
 
 urlpatterns = [
-    path('', views.home, name="home"),
+    path('', views.area, name="home"),
     path('area/', views.area, name="area"),
     path('shoplist/<int:aid>/', views.shoplist, name="shoplist"),
     path('furnitures/<int:sid>/', views.furnitures, name="furnitures"),
